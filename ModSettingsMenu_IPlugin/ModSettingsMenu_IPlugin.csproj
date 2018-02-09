@@ -71,7 +71,6 @@
     <Compile Include="KeyListener.cs" />
     <Compile Include="ModSettingsMenu.cs" />
     <Compile Include="ModSettingsMenuPlugin.cs" />
-    <Compile Include="NicerOutline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
