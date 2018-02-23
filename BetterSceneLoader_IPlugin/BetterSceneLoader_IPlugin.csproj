@@ -68,6 +68,7 @@
     <Compile Include="AutoGridLayout.cs" />
     <Compile Include="BetterSceneLoader.cs" />
     <Compile Include="BetterSceneLoaderPlugin.cs" />
+    <Compile Include="LoadingIcon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

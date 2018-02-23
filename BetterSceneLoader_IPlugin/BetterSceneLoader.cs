@@ -23,6 +23,7 @@ namespace BetterSceneLoader
 {
     public class BetterSceneLoader : MonoBehaviour
     {
+        static string iconPath = Environment.CurrentDirectory + "/Plugins/InterfaceSuite/load.png";
         static string sceneFolder = "studioneo/BetterSceneLoader/";
         static string orderFile = "order.txt";
         string scenePath => UserData.Path + sceneFolder;
@@ -55,8 +56,6 @@ namespace BetterSceneLoader
         bool smallWindow;
 
         Dictionary<string, Image> sceneCache = new Dictionary<string, Image>();
-        //Dictionary<string, bool> loadingState = new Dictionary<string, bool>();
-        //bool prevState = false;
         Button currentButton;
         string currentPath;
 
@@ -65,29 +64,12 @@ namespace BetterSceneLoader
             UIUtility.Init();
             MakeBetterSceneLoader();
             LoadSettings();
-            //StartCoroutine(LoadingIndicator());
         }
 
         void OnDestroy()
         {
             DestroyImmediate(UISystem.gameObject);
         }
-
-        //IEnumerator LoadingIndicator()
-        //{
-        //    while(true)
-        //    {
-        //        bool state = loadingState.Values.Contains(true);
-        //        if(state != prevState)
-        //        {
-        //            prevState = state;
-        //            nametext.text = state ? "Loading" : "Scenes";
-        //            Console.WriteLine(state);
-        //        }
-
-        //        yield return new WaitForSeconds(1f);
-        //    }
-        //}
 
         bool LoadSettings()
         {
@@ -176,6 +158,18 @@ namespace BetterSceneLoader
             folder.transform.SetRect(0f, 0f, 0f, 1f, 260f, 0f, 340f);
             folder.onClick.AddListener(() => Process.Start(scenePath));
 
+            if(File.Exists(iconPath))
+            {
+                var loadingPanel = UIUtility.CreatePanel("LoadingIconPanel", drag.transform);
+                loadingPanel.transform.SetRect(0f, 0f, 0f, 1f, 340f, 0f, 340f + headerSize);
+                loadingPanel.color = new Color(0f, 0f, 0f, 0f);
+                var loadingIcon = UIUtility.CreatePanel("LoadingIcon", loadingPanel.transform);
+                loadingIcon.transform.SetRect(0.1f, 0.1f, 0.9f, 0.9f);
+                var texture = PngAssist.LoadTexture(iconPath);
+                loadingIcon.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                LoadingIcon.Init(loadingIcon, -5f); 
+            }
+
             imagelist = UIUtility.CreateScrollView("Imagelist", mainPanel.transform);
             imagelist.transform.SetRect(0f, 0f, 1f, 1f, marginSize, marginSize, -marginSize, -headerSize - marginSize / 2f);
             imagelist.gameObject.AddComponent<Mask>();
@@ -256,7 +250,6 @@ namespace BetterSceneLoader
             for(int i = 0; i < 3; i++) yield return null;
             InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "LoadExtData", path);
             InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "LoadExtDataRaw", path);
-            //InvokePluginMethod("HSPE.MainWindow", "OnSceneLoad", currentPath);
         }
 
         void SaveScene()
@@ -269,7 +262,6 @@ namespace BetterSceneLoader
             {
                 InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "SaveExtData", path);
                 //InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "SaveExtDataRaw", path);
-                //InvokePluginMethod("HSPE.MainWindow", "OnSceneSave", path);
             }
 
             var button = CreateSceneButton(imagelist.content.GetComponentInChildren<Image>().transform, PngAssist.LoadTexture(path), path);
@@ -279,7 +271,6 @@ namespace BetterSceneLoader
         void DeleteScene()
         {
             File.Delete(currentPath);
-            //InvokePluginMethod("HSPE.MainWindow", "OnSceneDelete", currentPath);
             currentButton.gameObject.SetActive(false);
             confirmpanel.gameObject.SetActive(false);
             optionspanel.gameObject.SetActive(false);
@@ -288,7 +279,6 @@ namespace BetterSceneLoader
         void ImportScene()
         {
             Studio.Studio.Instance.ImportScene(currentPath);
-            //InvokePluginMethod("HSPE.MainWindow", "OnSceneImport", currentPath);
             confirmpanel.gameObject.SetActive(false);
             optionspanel.gameObject.SetActive(false);
         }
@@ -339,13 +329,13 @@ namespace BetterSceneLoader
 
             foreach(var scene in scenefiles)
             {
-                //loadingState[categoryText] = true;
+                LoadingIcon.loadingState[categoryText] = true;
                 var www = new WWW("file://" + scene.Value);
                 yield return www;
                 CreateSceneButton(parent, PngAssist.ChangeTextureFromByte(www.bytes), scene.Value);
             }
 
-            //loadingState[categoryText] = false;
+            LoadingIcon.loadingState[categoryText] = false;
         }
 
         Button CreateSceneButton(Transform parent, Texture2D texture, string path)
