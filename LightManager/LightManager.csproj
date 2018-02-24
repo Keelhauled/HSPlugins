@@ -80,7 +80,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>cd "$(TargetDir)"
+    <PostBuildEvent>exit
+cd "$(TargetDir)"
 cd..
 RenameAssembly.exe "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>

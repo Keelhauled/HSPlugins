@@ -15,8 +15,6 @@ using System.Diagnostics;
 // imitate windows explorer thumbnail spacing and positioning for scene loader
 // reset hsstudioaddon lighting on load if no xml data
 // problem adjusting thumbnail size when certain number range of scenes
-// add loading indicator
-// add HSPE save support
 // indicator if scene has mod xml attached
 
 namespace BetterSceneLoader

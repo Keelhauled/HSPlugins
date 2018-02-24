@@ -59,7 +59,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>SET ns=TogglePOV
+    <PostBuildEvent>exit
+SET ns=TogglePOV
 SET cn1=NeoMono
 SET cn2=HSceneMono
 

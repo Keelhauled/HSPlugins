@@ -52,7 +52,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>SET ns=HideUI
+    <PostBuildEvent>exit
+SET ns=HideUI
 SET cn=HideUI
 
 cd "$(TargetDir)"
