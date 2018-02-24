@@ -38,6 +38,9 @@
       <HintPath>..\..\DLL\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="dnlib">
+      <HintPath>.\dnlib.dll</HintPath>
+    </Reference>
     <Reference Include="IllusionPlugin">
       <HintPath>..\..\..\StudioNEO_64_Data\Managed\IllusionPlugin.dll</HintPath>
       <Private>False</Private>

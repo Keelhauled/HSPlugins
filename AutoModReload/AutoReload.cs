@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using UnityEngine;
 using System.Xml.Linq;
+using dnlib.DotNet;
 
 // if scene changes and gameobject doesn't persist, field once is wrong, add OncePerScene option (doesn't matter in neo)
 
@@ -61,7 +62,7 @@ namespace AutoModReload
                 if(ass.enabled == AssemblyInfo.Enabled.Always || !ass.once)
                 {
                     if(ass.enabled == AssemblyInfo.Enabled.Once) ass.once = true;
-                    InvokeBoostrap(path, ass.target);
+                    LoadDLL(path, ass.target);
                 }
             }
         }
@@ -81,6 +82,32 @@ namespace AutoModReload
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
+            }
+        }
+
+        private void LoadDLL(string path, string type)
+        {
+            var fi = new FileInfo(path);
+            if(!fi.Exists)
+            {
+                Console.WriteLine("File \"{0}\" does not exist.", fi.Name);
+                return;
+            }
+
+            var b = File.ReadAllBytes(fi.FullName); //Copy to buffer
+            var ad = AssemblyDef.Load(b);
+            var prevName = ad.Name.ToString();
+            prevName = prevName.Substring(0, Math.Min(prevName.Length, 6)); //Arbitrary, take first 6 chars.
+            ad.Name = new UTF8String(prevName + DateTime.Now.Ticks.ToString());
+
+            using(var ms = new MemoryStream())
+            {
+                ad.Write(ms);
+                var ass = Assembly.Load(ms.ToArray());
+                var t = ass.GetType(type);
+                var m = t.GetMethod("Bootstrap", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+                m.Invoke(null, null);
+                Console.WriteLine(type);
             }
         }
 

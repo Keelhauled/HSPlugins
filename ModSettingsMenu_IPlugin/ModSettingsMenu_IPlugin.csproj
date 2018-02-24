@@ -90,7 +90,8 @@
   </Target>
   <Import Project="..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.targets" Condition="Exists('..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>SET ns=ModSettingsMenu
+    <PostBuildEvent>exit
+SET ns=ModSettingsMenu
 SET cn=ModSettingsMenu
 
 cd "$(TargetDir)"
