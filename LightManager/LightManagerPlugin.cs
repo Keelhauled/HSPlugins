@@ -23,8 +23,6 @@ namespace LightManager
         public static string[] SceneFilter = new string[]
         {
             "Studio",
-            //"HScene",
-            //"CustomScene",
         };
 
         public void OnLevelWasLoaded(int level)
