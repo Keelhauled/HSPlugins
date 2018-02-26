@@ -38,6 +38,10 @@
       <HintPath>..\..\DLL\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="HSExtSave">
+      <HintPath>..\..\..\Plugins\HSExtSave.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="HSStudioNEOExtSave">
       <HintPath>..\..\..\Plugins\HSStudioNEOExtSave.dll</HintPath>
       <Private>False</Private>

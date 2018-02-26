@@ -4,15 +4,15 @@ using UnityEngine;
 using IllusionUtility.GetUtility;
 using UnityEngine.UI;
 using UILib;
-using HSStudioNEOExtSave;
 using System.Collections.Generic;
-using System.Linq;
+
+// remove hsstudioaddon code
+// add import support
 
 namespace LightManager
 {
     class LightManager : MonoBehaviour
     {
-        LightManagerSaveLoadHandler handler;
         Action<TreeNodeObject> selectWorkDel;
 
         Image spotlightUI;
@@ -28,8 +28,7 @@ namespace LightManager
             UIUtility.Init();
             ExtraLightUI(uiTransform);
 
-            handler = new LightManagerSaveLoadHandler();
-            StudioNEOExtendSaveMgr.Instance.RegisterHandler(handler);
+            gameObject.AddComponent<SaveDataHandler>();
 
             selectWorkDel = new Action<TreeNodeObject>(OnSelectWork);
             Studio.Studio.Instance.treeNodeCtrl.onSelect += selectWorkDel;
@@ -66,8 +65,7 @@ namespace LightManager
             {
                 DestroyImmediate(item);
             }
-
-            StudioNEOExtendSaveMgr.Instance.Unregisterhandler(handler);
+            
             Studio.Studio.Instance.treeNodeCtrl.onSelect -= selectWorkDel;
         }
 
