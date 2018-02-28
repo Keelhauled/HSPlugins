@@ -4,7 +4,7 @@
 
 ## Description
 A random bunch of plugin mods for Honey Select.  
-Use ModMenuManager to change your current hotkeys/settings for the mods.
+Use ModMenuManager to change your current hotkeys/settings for the mods.  
 Feel free to remove the xml files related to mods you don't use.
 <br>
 
