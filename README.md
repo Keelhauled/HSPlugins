@@ -1,41 +1,38 @@
-# HSPlugins
+
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=keelhauledhs%40gmail%2ecom&lc=FI&item_name=Keelhauled&item_number=LockOnPlugin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
 
 ## Installation
 1. Install Illusion Plugin Architecture (IPA)
 2. Throw the files into the Honey Select root folder
 
-<details>
-  <summary><h3 style="display: inline">BetterSceneLoader</h3></summary>
-  <p>Faster to use scene loader for Studio Neo.</p>
-</details><br>
+## Plugins
 
-<details>
-  <summary><h3 style="display: inline">HideUI</h3></summary>
-  <p>Hide all the UI with one click. Customize to add more menus to hide.</p>
-</details><br>
+- #### BetterSceneLoader - [Download](DOWNLOADS/BetterSceneLoader.zip)
+Faster to use scene loader for Studio Neo  
+*ModMenuManager is required to use this*
 
-<details>
-  <summary><h3 style="display: inline">LightManager</h3></summary>
-  ```Currently only use is making spotlights track characters
-  ```
-</details><br>
+- #### HideUI - [Download](DOWNLOADS/HideUI.zip)
+Hide all the UI with one click  
+More menus can be added in `\Plugins\InterfaceSuite\HideUI.txt`
 
-<details>
-  <summary><h3 style="display: inline">ModMenuManager</h3></summary>
-  <p>A menu to manage all other mod menus.</p>
-</details><br>
+- #### LightManager - [Download](DOWNLOADS/LightManager.zip)
+Currently the only use is making spotlights track characters  
+Importing a scene doesn't do anything at the moment.  
+*[HSExtSave](http://www.hongfire.com/forum/forum/hentai-lair/hf-modding-translation/honey-select-mods/5747804) is required to use this*
 
-<details>
-  <summary><h3 style="display: inline">ModSettingsMenu</h3></summary>
-  <p>A settings menu for mods.</p>
-</details><br>
+- #### ModMenuManager - [Download](DOWNLOADS/ModMenuManager.zip)
+A menu to manage all other mod menus  
+More menus can be added in `\Plugins\InterfaceSuite\ModMenuManager\ModMenuManager.xml`
 
-<details>
-  <summary><h3 style="display: inline">NeckLookMod</h3></summary>
-  <p>Currently only use is making spotlights track characters.</p>
-</details><br>
+- #### ModSettingsMenu - [Download](DOWNLOADS/ModSettingsMenu.zip)
+An easily customizable settings menu for mods  
+Settings for the menu can be edited in `\Plugins\InterfaceSuite\ModSettingsMenu`  
+*ModMenuManager is required to use this*
 
-<details>
-  <summary><h3 style="display: inline">TogglePOV</h3></summary>
-  <p>The original and the best POV mod for Honey Select. Core code not written by me.</p>
-</details>
+- #### NeckLookMod - [Download Soon™](DOWNLOADS/NeckLookMod.zip)
+Force character to look at other characters  
+*ModMenuManager is required to use this*
+
+- #### TogglePOV - [Download](DOWNLOADS/TogglePOV.zip)
+The original and the best POV mod for Honey Select  
+Core code not written by me
