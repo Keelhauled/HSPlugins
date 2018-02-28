@@ -15,7 +15,9 @@ Use ModMenuManager to change your current hotkeys/settings for the mods.
 ## Plugins
 
 #### BetterSceneLoader - [Download](DOWNLOADS/BetterSceneLoader.zip)
-Faster to use scene loader for Studio Neo.  
+Faster to use scene loader for Studio Neo.
+Scenes are loaded from `\UserData\studioneo\BetterSceneLoader`.  
+`order.txt` in the aforementioned folder can be used to customize the order of the categories in the dropdown menu.  
 *ModMenuManager is required to use this*.
 
 #### HideUI - [Download](DOWNLOADS/HideUI.zip)
@@ -30,23 +32,20 @@ Importing a scene doesn't do anything at the moment.
 
 #### ModMenuManager - [Download](DOWNLOADS/ModMenuManager.zip)
 A menu to manage all other mod menus.  
-More menus can be added in `\Plugins\InterfaceSuite\ModMenuManager\ModMenuManager.xml`.
+Menus can be added or removed in `\Plugins\InterfaceSuite\ModMenuManager\ModMenuManager.xml`.
 
 #### ModSettingsMenu - [Download](DOWNLOADS/ModSettingsMenu.zip)
-An easily customizable settings menu for mods.  
-Settings for the menu can be edited in `\Plugins\InterfaceSuite\ModSettingsMenu`.  
-*ModMenuManager is required to use this*.
-
-#### NeckLookMod - [Download Soon™](DOWNLOADS/NeckLookMod.zip)
-Force character to look at other characters.  
+An "easily" customizable settings menu for mods.  
+Settings can be added or removed in `\Plugins\InterfaceSuite\ModSettingsMenu`.  
 *ModMenuManager is required to use this*.
 
 #### TogglePOV - [Download](DOWNLOADS/TogglePOV.zip)
 The original and the best POV mod for Honey Select improved and updated to the latest version.  
 Default hotkey is `Backspace`.  
+Right mouse button can be used to change the FOV while in first person mode.  
 Core code not written by me.
 
 ## Credits
-Keelhauled
-Joan6694 for HSExtSave and UIUtility
+Keelhauled  
+Joan6694 for HSExtSave and UIUtility  
 Original maker of TogglePOV
