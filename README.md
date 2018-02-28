@@ -15,32 +15,32 @@ Feel free to remove the xml files related to mods you don't use.
 
 ## Plugins
 
-#### BetterSceneLoader - [Download](DOWNLOADS/BetterSceneLoader.zip)
+#### BetterSceneLoader - [Download](/releases/latest)
 Faster to use scene loader for Studio Neo.
 Scenes are loaded from `\UserData\studioneo\BetterSceneLoader`.  
 `order.txt` in the aforementioned folder can be used to customize the order of the categories in the dropdown menu.  
 *ModMenuManager is required to use this*.
 
-#### HideUI - [Download](DOWNLOADS/HideUI.zip)
+#### HideUI - [Download](/releases/latest)
 Hide all the UI with one click, hotkey is `M` by default.  
 More menus can be added in `\Plugins\InterfaceSuite\HideUI.txt`.
 
-#### LightManager - [Download](DOWNLOADS/LightManager.zip)
+#### LightManager - [Download](/releases/latest)
 Currently the only use is making spotlights track characters.  
 To use, first select the lights you want to target and then select a character and press apply in the upper left corner.  
 Importing a scene doesn't do anything at the moment.  
 *[HSExtSave](http://www.hongfire.com/forum/forum/hentai-lair/hf-modding-translation/honey-select-mods/5747804) is required to use this*.
 
-#### ModMenuManager - [Download](DOWNLOADS/ModMenuManager.zip)
+#### ModMenuManager - [Download](/releases/latest)
 A menu to manage all other mod menus.  
 Menus can be added or removed in `\Plugins\InterfaceSuite\ModMenuManager\ModMenuManager.xml`.
 
-#### ModSettingsMenu - [Download](DOWNLOADS/ModSettingsMenu.zip)
+#### ModSettingsMenu - [Download](/releases/latest)
 An "easily" customizable settings menu for mods.  
 Settings can be added or removed in `\Plugins\InterfaceSuite\ModSettingsMenu`.  
 *ModMenuManager is required to use this*.
 
-#### TogglePOV - [Download](DOWNLOADS/TogglePOV.zip)
+#### TogglePOV - [Download](/releases/latest)
 The original and the best POV mod for Honey Select improved and updated for the latest version.  
 Default hotkey is `Backspace`.  
 Right mouse button can be used to change the FOV while in first person mode.  
