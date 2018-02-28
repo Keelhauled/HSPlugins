@@ -6,9 +6,11 @@
 A random bunch of plugin mods for Honey Select.  
 Use ModMenuManager to change your current hotkeys/settings for the mods.  
 Feel free to remove the xml files related to mods you don't use.
+
+If you've found a bug or think something could be improved with any of my mods please make a github issue or a hongfire comment about it or message me on the Honey Play discord.
 <br>
 
-![Alt text](examplepic.jpg)
+![Image](examplepic.jpg)
 
 ## Installation
 1. Install Illusion Plugin Architecture (IPA).
@@ -19,7 +21,9 @@ Feel free to remove the xml files related to mods you don't use.
 #### BetterSceneLoader - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/v1.0.0/BetterSceneLoader.zip)
 Faster to use scene loader for Studio Neo.
 Scenes are loaded from `\UserData\studioneo\BetterSceneLoader`.  
+The subfolders of this folder will act as categories for your scenes.  
 `order.txt` in the aforementioned folder can be used to customize the order of the categories in the dropdown menu.  
+All the necessary folders and files are created after running the game once.  
 *ModMenuManager is required to use this*.
 
 #### HideUI - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/v1.0.0/HideUI.zip)
@@ -37,7 +41,7 @@ A menu to manage all other mod menus.
 Menus can be added or removed in `\Plugins\InterfaceSuite\ModMenuManager\ModMenuManager.xml`.
 
 #### ModSettingsMenu - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/v1.0.0/ModSettingsMenu.zip)
-An "easily" customizable settings menu for mods.  
+An "easily" customizable in-game settings menu for mods.  
 Settings can be added or removed in `\Plugins\InterfaceSuite\ModSettingsMenu`.  
 *ModMenuManager is required to use this*.
 
