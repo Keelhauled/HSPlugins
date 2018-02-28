@@ -26,8 +26,9 @@ namespace BetterSceneLoader
         static string orderFile = "order.txt";
         string scenePath => UserData.Path + sceneFolder;
 
+        float buttonSize = 10f;
         float marginSize = 5f;
-        float headerSize = 22f;
+        float headerSize = 20f;
         float UIScale = 1.0f;
         float scrollOffsetX = -15f;
         float windowMargin = 130f;
@@ -123,11 +124,11 @@ namespace BetterSceneLoader
             UIUtility.MakeObjectDraggable(drag.rectTransform, mainPanel.rectTransform);
 
             nametext = UIUtility.CreateText("Nametext", drag.transform, "Scenes");
-            nametext.transform.SetRect(0f, 0f, 1f, 1f, 340f, 0f, -headerSize);
+            nametext.transform.SetRect(0f, 0f, 1f, 1f, 340f, 0f, -buttonSize * 2f);
             nametext.alignment = TextAnchor.MiddleCenter;
 
             var close = UIUtility.CreateButton("CloseButton", drag.transform, "");
-            close.transform.SetRect(1f, 0f, 1f, 1f, -headerSize);
+            close.transform.SetRect(1f, 0f, 1f, 1f, -buttonSize * 2f);
             close.onClick.AddListener(() => UISystem.gameObject.SetActive(false));
             AddCloseSymbol(close);
             
