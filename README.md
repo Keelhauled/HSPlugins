@@ -4,6 +4,7 @@
 ## Description
 A random bunch of plugin mods for Honey Select.  
 Use ModMenuManager to change your current hotkeys/settings for the mods.
+Feel free to remove the xml files related to mods you don't use.
 <br>
 
 ![Alt text](examplepic.jpg)
@@ -26,7 +27,7 @@ More menus can be added in `\Plugins\InterfaceSuite\HideUI.txt`.
 
 #### LightManager - [Download](DOWNLOADS/LightManager.zip)
 Currently the only use is making spotlights track characters.  
-To use first select the lights you want to target and then select a character and press apply in the upper left corner.  
+To use, first select the lights you want to target and then select a character and press apply in the upper left corner.  
 Importing a scene doesn't do anything at the moment.  
 *[HSExtSave](http://www.hongfire.com/forum/forum/hentai-lair/hf-modding-translation/honey-select-mods/5747804) is required to use this*.
 
@@ -40,7 +41,7 @@ Settings can be added or removed in `\Plugins\InterfaceSuite\ModSettingsMenu`.
 *ModMenuManager is required to use this*.
 
 #### TogglePOV - [Download](DOWNLOADS/TogglePOV.zip)
-The original and the best POV mod for Honey Select improved and updated to the latest version.  
+The original and the best POV mod for Honey Select improved and updated for the latest version.  
 Default hotkey is `Backspace`.  
 Right mouse button can be used to change the FOV while in first person mode.  
 Core code not written by me.
