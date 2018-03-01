@@ -32,7 +32,7 @@ More menus can be added in `\Plugins\InterfaceSuite\HideUI.txt`.
 
 #### LightManager - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/v1.0.0/LightManager.zip)
 Currently the only use is making spotlights track characters.  
-To use, first select the lights you want to target and then select a character and press apply in the upper left corner.  
+To use, first select the lights you want to target and then select a character and press apply in the anim menu.  
 Importing a scene doesn't do anything at the moment.  
 *[HSExtSave](http://www.hongfire.com/forum/forum/hentai-lair/hf-modding-translation/honey-select-mods/5747804) is required to use this*.
 
