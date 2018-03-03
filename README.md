@@ -47,8 +47,9 @@ Settings can be added or removed in `\Plugins\InterfaceSuite\ModSettingsMenu`.
 
 #### TogglePOV - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/v1.0.0/TogglePOV.zip)
 The original and the best POV mod for Honey Select improved and updated for the latest version.  
-Default hotkey is `Backspace`.  
+In an hscene the selected chara is the one that is closest to the cameratarget when pressing the button.
 Right mouse button can be used to change the FOV while in first person mode.  
+Default hotkey is `Backspace`.  
 Core code not written by me.
 
 ## Credits
