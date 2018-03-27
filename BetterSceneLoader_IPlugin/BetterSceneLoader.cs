@@ -62,6 +62,15 @@ namespace BetterSceneLoader
             UIUtility.Init();
             MakeBetterSceneLoader();
             LoadSettings();
+            StartCoroutine(StartingScene());
+        }
+
+        IEnumerator StartingScene()
+        {
+            for(int i = 0; i < 10; i++) yield return null;
+            var files = Directory.GetFiles(scenePath, "*.png", SearchOption.TopDirectoryOnly).ToList();
+            foreach(var item in files) Console.WriteLine(item);
+            if(files.Count > 0) LoadScene(files[0]);
         }
 
         void OnDestroy()
@@ -185,7 +194,7 @@ namespace BetterSceneLoader
 
             yesbutton = UIUtility.CreateButton("YesButton", confirmpanel.transform, "Y");
             yesbutton.transform.SetRect(0f, 0f, 0.5f, 1f);
-            yesbutton.onClick.AddListener(() => DeleteScene());
+            yesbutton.onClick.AddListener(() => DeleteScene(currentPath));
 
             nobutton = UIUtility.CreateButton("NoButton", confirmpanel.transform, "N");
             nobutton.transform.SetRect(0.5f, 0f, 1f, 1f);
@@ -193,11 +202,11 @@ namespace BetterSceneLoader
 
             var loadbutton = UIUtility.CreateButton("LoadButton", optionspanel.transform, "Load");
             loadbutton.transform.SetRect(0f, 0f, 0.3f, 1f);
-            loadbutton.onClick.AddListener(() => LoadScene());
+            loadbutton.onClick.AddListener(() => LoadScene(currentPath));
 
             var importbutton = UIUtility.CreateButton("ImportButton", optionspanel.transform, "Import");
             importbutton.transform.SetRect(0.35f, 0f, 0.65f, 1f);
-            importbutton.onClick.AddListener(() => ImportScene());
+            importbutton.onClick.AddListener(() => ImportScene(currentPath));
 
             var deletebutton = UIUtility.CreateButton("DeleteButton", optionspanel.transform, "Delete");
             deletebutton.transform.SetRect(0.7f, 0f, 1f, 1f);
@@ -233,13 +242,13 @@ namespace BetterSceneLoader
             return sorted.Select(x => new Dropdown.OptionData(x)).ToList();
         }
 
-        void LoadScene()
+        void LoadScene(string path)
         {
             confirmpanel.gameObject.SetActive(false);
             optionspanel.gameObject.SetActive(false);
             InvokePluginMethod("LockOnPlugin.LockOnBase", "ResetModState");
-            Studio.Studio.Instance.LoadScene(currentPath);
-            if(useExternalSavedata) StartCoroutine(StudioNEOExtendSaveMgrLoad(currentPath));
+            Studio.Studio.Instance.LoadScene(path);
+            if(useExternalSavedata) StartCoroutine(StudioNEOExtendSaveMgrLoad(path));
             if(autoClose) UISystem.gameObject.SetActive(false);
         }
 
@@ -266,17 +275,17 @@ namespace BetterSceneLoader
             button.transform.SetAsFirstSibling();
         }
 
-        void DeleteScene()
+        void DeleteScene(string path)
         {
-            File.Delete(currentPath);
+            File.Delete(path);
             currentButton.gameObject.SetActive(false);
             confirmpanel.gameObject.SetActive(false);
             optionspanel.gameObject.SetActive(false);
         }
 
-        void ImportScene()
+        void ImportScene(string path)
         {
-            Studio.Studio.Instance.ImportScene(currentPath);
+            Studio.Studio.Instance.ImportScene(path);
             confirmpanel.gameObject.SetActive(false);
             optionspanel.gameObject.SetActive(false);
         }
