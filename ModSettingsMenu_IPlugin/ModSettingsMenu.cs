@@ -13,6 +13,7 @@ using System.Linq;
 
 // support modifiers with KeyListener
 // set Kisama.Kisama.IsInputBlocked in KeyListener
+// only show plugins that are active (using the IPA plugin list)
 
 namespace ModSettingsMenu
 {
@@ -42,6 +43,11 @@ namespace ModSettingsMenu
         void Awake()
         {
             UIUtility.Init();
+            //var ab = AssetBundle.LoadFromFile(Environment.CurrentDirectory + "/Plugins/InterfaceSuite/font");
+            //var f = ab.LoadAsset<Font>("assets/new folder/avenirltstd-medium.ttf");
+            //if(f) UIUtility.defaultFont = f;
+            //ab.Unload(false);
+            //UIUtility.defaultFont = Resources.GetBuiltinResource<Font>("avenirltstd-medium.ttf");
             ModMenuUI();
         }
 
