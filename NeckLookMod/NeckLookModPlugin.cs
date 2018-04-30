@@ -13,8 +13,8 @@ namespace NeckLookMod
 
         public string[] Filter => new string[]
         {
-            "HoneySelect_32",
-            "HoneySelect_64",
+            //"HoneySelect_32",
+            //"HoneySelect_64",
             "StudioNEO_32",
             "StudioNEO_64",
         };
