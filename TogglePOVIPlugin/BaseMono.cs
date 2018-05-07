@@ -15,7 +15,7 @@ namespace TogglePOV
         protected abstract bool CameraStopMoving();
         protected abstract CharInfo GetClosestChara(Vector3 targetPos);
 
-        private KeyCode hotkey = KeyCode.Backslash;
+        private KeyCode hotkey = KeyCode.Backspace;
         private float sensitivityX = 0.5f;
         private float sensitivityY = 0.5f;
         private float DEFAULT_FOV = 70f;
