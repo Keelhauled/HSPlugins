@@ -7,7 +7,7 @@ A random bunch of plugin mods for Honey Select.
 Use ModMenuManager to change your current hotkeys/settings for the mods.  
 Feel free to remove the xml files related to mods you don't use.
 
-If you've found a bug or think something could be improved with any of my mods please make a github issue or a hongfire comment about it or message me on the Honey Play discord.
+If you've found a bug or think something could be improved with any of my mods please make a github issue or a hongfire comment about it or message me on the HS discord.
 <br>
 
 ![Image](examplepic.jpg)
@@ -19,12 +19,25 @@ If you've found a bug or think something could be improved with any of my mods p
 ## Plugins
 
 #### BetterSceneLoader - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/v1.0.0/BetterSceneLoader.zip)
-Faster to use scene loader for Studio Neo.
+Faster to use scene loader for Studio Neo.  
 Scenes are loaded from `\UserData\studioneo\BetterSceneLoader`.  
 The subfolders of this folder will act as categories for your scenes.  
 `order.txt` in the aforementioned folder can be used to customize the order of the categories in the dropdown menu.  
 All the necessary folders and files are created after running the game once.  
+A scene with the filename `defaultscene.png` in the `BetterSceneLoader` folder will be loaded when starting the game.  
 *ModMenuManager is required to use this*.
+
+<details><summary>Changelog</summary>
+
+```
+v1.1.1
+- Switched to a hopefully more reliable way to determine paths for scenes
+```
+```
+v1.1.0  
+- Added a feature to set a default scene that is loaded when starting the game
+```
+</details>
 
 #### HideUI - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/v1.0.0/HideUI.zip)
 Hide all the UI with one click, hotkey is `M` by default.  
@@ -41,7 +54,7 @@ A menu to manage all other mod menus.
 Menus can be added or removed in `\Plugins\InterfaceSuite\ModMenuManager\ModMenuManager.xml`.
 
 #### ModSettingsMenu - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/v1.0.0/ModSettingsMenu.zip)
-An "easily" customizable in-game settings menu for mods.  
+Easily customizable in-game settings menu for mods.  
 Settings can be added or removed in `\Plugins\InterfaceSuite\ModSettingsMenu`.  
 *ModMenuManager is required to use this*.
 
@@ -52,7 +65,26 @@ Right mouse button can be used to change the FOV while in first person mode.
 Default hotkey is `Backspace`.  
 Core code not written by me.
 
+<details><summary>Changelog</summary>
+
+```
+v1.0.1
+- Fixed the default hotkey
+```
+</details>
+
+#### Harmony4KPatch - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/second/Harmony4KPatch.zip)
+A harmony version of Plasticmind's 4k patch. This means that it doesn't replace any dll files.  
+Some small features like bloom are not edited in this version yet because who uses bloom right. :)  
+To install, download the 4k patch normally, delete the Data folders from the mod folder, install it and then install Harmony4KPatch like a normal plugin.
+
+#### NeckSettings - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/second/NeckSettings.zip)
+This was supposed to be a fully featured settings menu for necklook but at the moment it is just a small tweak to make the character look at the camera similar to how it is in PlayHome.  
+Still a work in progress so there may be a few neck twisting glitches remaining.
+
+
 ## Credits
 Keelhauled  
 Joan6694 for HSExtSave and UIUtility  
-Original maker of TogglePOV
+Original maker of TogglePOV  
+Plasticmind for the 4k patch
