@@ -7,7 +7,7 @@ namespace TogglePOV
     public class TogglePOVPlugin : IEnhancedPlugin
     {
         public const string PLUGIN_NAME = "TogglePOV";
-        public const string PLUGIN_VERSION = "1.0";
+        public const string PLUGIN_VERSION = "1.0.1";
         public string Name => PLUGIN_NAME;
         public string Version => PLUGIN_VERSION;
 

@@ -22,9 +22,8 @@ namespace BetterSceneLoader
     public class BetterSceneLoader : MonoBehaviour
     {
         static string iconPath = Environment.CurrentDirectory + "/Plugins/InterfaceSuite/load.png";
-        static string sceneFolder = "studioneo/BetterSceneLoader/";
-        static string orderFile = "order.txt";
-        string scenePath => UserData.Path + sceneFolder;
+        static string scenePath = Environment.CurrentDirectory + "/UserData/studioneo/BetterSceneLoader/";
+        static string orderPath = scenePath + "order.txt";
 
         float buttonSize = 10f;
         float marginSize = 5f;
@@ -68,8 +67,7 @@ namespace BetterSceneLoader
         IEnumerator StartingScene()
         {
             for(int i = 0; i < 10; i++) yield return null;
-            var files = Directory.GetFiles(scenePath, "*.png", SearchOption.TopDirectoryOnly).ToList();
-            foreach(var item in files) Console.WriteLine(item);
+            var files = Directory.GetFiles(scenePath, "defaultscene.png", SearchOption.TopDirectoryOnly).ToList();
             if(files.Count > 0) LoadScene(files[0]);
         }
 
@@ -217,25 +215,25 @@ namespace BetterSceneLoader
 
         List<Dropdown.OptionData> GetCategories()
         {
-            var folders = Directory.GetDirectories(UserData.Create(sceneFolder));
+            if(!File.Exists(scenePath)) Directory.CreateDirectory(scenePath);
+            var folders = Directory.GetDirectories(scenePath);
 
             if(folders.Length == 0)
             {
-                UserData.Create(sceneFolder + "Category1");
-                UserData.Create(sceneFolder + "Category2");
-                folders = Directory.GetDirectories(UserData.Create(sceneFolder));
+                Directory.CreateDirectory(scenePath + "Category1");
+                Directory.CreateDirectory(scenePath + "Category2");
+                folders = Directory.GetDirectories(scenePath);
             }
 
             string[] order;
-            string filePath = scenePath + orderFile;
-            if(File.Exists(filePath))
+            if(File.Exists(orderPath))
             {
-                order = File.ReadAllLines(filePath);
+                order = File.ReadAllLines(orderPath);
             }
             else
             {
                 order = new string[0];
-                File.Create(filePath);
+                File.Create(orderPath);
             }
             
             var sorted = folders.Select(x => Path.GetFileName(x)).OrderBy(x => order.Contains(x) ? Array.IndexOf(order, x) : order.Length);
@@ -337,9 +335,13 @@ namespace BetterSceneLoader
             foreach(var scene in scenefiles)
             {
                 LoadingIcon.loadingState[categoryText] = true;
-                var www = new WWW("file://" + scene.Value);
-                yield return www;
-                CreateSceneButton(parent, PngAssist.ChangeTextureFromByte(www.bytes), scene.Value);
+
+                using(WWW www = new WWW("file:///" + scene.Value))
+                {
+                    yield return www;
+                    if(!string.IsNullOrEmpty(www.error)) throw new Exception(www.error);
+                    CreateSceneButton(parent, PngAssist.ChangeTextureFromByte(www.bytes), scene.Value);
+                }
             }
 
             LoadingIcon.loadingState[categoryText] = false;
