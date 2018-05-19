@@ -8,8 +8,6 @@ using UILib;
 using IllusionPlugin;
 using System.IO;
 using System.Collections;
-using System.Reflection;
-using IllusionInjector;
 using System.Diagnostics;
 
 // imitate windows explorer thumbnail spacing and positioning for scene loader
@@ -137,7 +135,7 @@ namespace BetterSceneLoader
             var close = UIUtility.CreateButton("CloseButton", drag.transform, "");
             close.transform.SetRect(1f, 0f, 1f, 1f, -buttonSize * 2f);
             close.onClick.AddListener(() => UISystem.gameObject.SetActive(false));
-            AddCloseSymbol(close);
+            Utils.AddCloseSymbol(close);
             
             category = UIUtility.CreateDropdown("Dropdown", drag.transform, "Categories");
             category.transform.SetRect(0f, 0f, 0f, 1f, 0f, 0f, 100f);
@@ -244,7 +242,7 @@ namespace BetterSceneLoader
         {
             confirmpanel.gameObject.SetActive(false);
             optionspanel.gameObject.SetActive(false);
-            InvokePluginMethod("LockOnPlugin.LockOnBase", "ResetModState");
+            Utils.InvokePluginMethod("LockOnPlugin.LockOnBase", "ResetModState");
             Studio.Studio.Instance.LoadScene(path);
             if(useExternalSavedata) StartCoroutine(StudioNEOExtendSaveMgrLoad(path));
             if(autoClose) UISystem.gameObject.SetActive(false);
@@ -253,8 +251,8 @@ namespace BetterSceneLoader
         IEnumerator StudioNEOExtendSaveMgrLoad(string path)
         {
             for(int i = 0; i < 3; i++) yield return null;
-            InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "LoadExtData", path);
-            InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "LoadExtDataRaw", path);
+            Utils.InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "LoadExtData", path);
+            Utils.InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "LoadExtDataRaw", path);
         }
 
         void SaveScene()
@@ -265,7 +263,7 @@ namespace BetterSceneLoader
             Studio.Studio.Instance.sceneInfo.Save(path);
             if(useExternalSavedata)
             {
-                InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "SaveExtData", path);
+                Utils.InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "SaveExtData", path);
                 //InvokePluginMethod("HSStudioNEOExtSave.StudioNEOExtendSaveMgr", "SaveExtDataRaw", path);
             }
 
@@ -386,96 +384,6 @@ namespace BetterSceneLoader
             }
 
             return scenePath;
-        }
-
-        public static void AddCloseSymbol(Button button)
-        {
-            var x1 = UIUtility.CreatePanel("x1", button.transform);
-            x1.transform.SetRect(0f, 0f, 1f, 1f, 8f, 0f, -8f);
-            x1.rectTransform.eulerAngles = new Vector3(0f, 0f, 45f);
-            x1.color = new Color(0f, 0f, 0f, 1f);
-
-            var x2 = UIUtility.CreatePanel("x2", button.transform);
-            x2.transform.SetRect(0f, 0f, 1f, 1f, 8f, 0f, -8f);
-            x2.rectTransform.eulerAngles = new Vector3(0f, 0f, -45f);
-            x2.color = new Color(0f, 0f, 0f, 1f);
-        }
-
-        public static object InvokePluginMethod(string typeName, string methodName, params object[] parameters)
-        {
-            Type type = FindTypeIPlugin(typeName);
-
-            if(type != null)
-            {
-                var instance = FindObjectOfType(type);
-
-                if(instance != null)
-                {
-                    parameters = parameters ?? new object[0];
-                    Type[] paramTypes = parameters.Select(x => x.GetType()).ToArray();
-                    BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
-                    MethodInfo methodInfo = type.GetMethod(methodName, bindingFlags, null, paramTypes, null);
-
-                    if(methodInfo != null)
-                    {
-                        if(methodInfo.GetParameters().Length == 0)
-                        {
-                            return methodInfo.Invoke(instance, null);
-                        }
-                        else
-                        {
-                            return methodInfo.Invoke(instance, parameters);
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Method {0}.{1} not found", typeName, methodInfo);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Instance of {0} not found", typeName);
-                }
-            }
-            else
-            {
-                Console.WriteLine("Type {0} not found", typeName);
-            }
-
-            return null;
-        }
-
-        public static Type FindTypeIPlugin(string qualifiedTypeName)
-        {
-            Type t = Type.GetType(qualifiedTypeName);
-
-            if(t != null)
-            {
-                return t;
-            }
-            else
-            {
-                foreach(Assembly asm in PluginManager.Plugins.Select(x => x.GetType().Assembly))
-                {
-                    t = asm.GetType(qualifiedTypeName);
-                    if(t != null)
-                    {
-                        //Console.WriteLine("{0} belongs to an IPlugin", qualifiedTypeName);
-                        return t;
-                    }
-                }
-
-                foreach(Assembly asm in AppDomain.CurrentDomain.GetAssemblies())
-                {
-                    t = asm.GetType(qualifiedTypeName);
-                    if(t != null)
-                    {
-                        return t;
-                    }
-                }
-
-                return null;
-            }
         }
     }
 }
