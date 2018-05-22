@@ -18,7 +18,7 @@ If you've found a bug or think something could be improved with any of my mods p
 
 ## Plugins
 
-#### BetterSceneLoader - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/v1.0.0/BetterSceneLoader.zip)
+#### BetterSceneLoader - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/second/BetterSceneLoader.v1.1.1.zip)
 Faster to use scene loader for Studio Neo.  
 Scenes are loaded from `\UserData\studioneo\BetterSceneLoader`.  
 The subfolders of this folder will act as categories for your scenes.  
@@ -58,7 +58,7 @@ Easily customizable in-game settings menu for mods.
 Settings can be added or removed in `\Plugins\InterfaceSuite\ModSettingsMenu`.  
 *ModMenuManager is required to use this*.
 
-#### TogglePOV - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/v1.0.0/TogglePOV.zip)
+#### TogglePOV - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/second/TogglePOV.v1.0.1.zip)
 The original and the best POV mod for Honey Select improved and updated for the latest version.  
 In an hscene the selected chara is the one that is closest to the cameratarget when pressing the button.  
 Right mouse button can be used to change the FOV while in first person mode.  
@@ -73,12 +73,12 @@ v1.0.1
 ```
 </details>
 
-#### Harmony4KPatch - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/second/Harmony4KPatch.zip)
+#### Harmony4KPatch - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/second/Harmony4KPatch.v1.0.0.zip)
 A harmony version of Plasticmind's 4k patch. This means that it doesn't replace any dll files.  
 Some small features like bloom are not edited in this version yet because who uses bloom right. :)  
 To install, download the 4k patch normally, delete the Data folders from the mod folder, install it and then install Harmony4KPatch like a normal plugin.
 
-#### NeckSettings - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/second/NeckSettings.zip)
+#### NeckSettings - [Download](https://github.com/Keelhauled/HSPlugins/releases/download/second/NeckSettings.v1.0.0.zip)
 This was supposed to be a fully featured settings menu for necklook but at the moment it is just a small tweak to make the character look at the camera similar to how it is in PlayHome.  
 Still a work in progress so there may be a few neck twisting glitches remaining.
 
