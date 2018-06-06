@@ -1,5 +1,6 @@
 ﻿using IllusionInjector;
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using UILib;
@@ -98,6 +99,31 @@ namespace BetterSceneLoader
 
                 return null;
             }
+        }
+
+        public static Texture2D LoadTexture(byte[] bytes)
+        {
+            Texture2D result;
+            using (var memoryStream = new MemoryStream(bytes))
+            {
+                long num = 0L;
+                PngAssist.CheckPngData(memoryStream, ref num, false);
+                if (num == 0L)
+                {
+                    result = null;
+                }
+                else
+                {
+                    using (BinaryReader binaryReader = new BinaryReader(memoryStream))
+                    {
+                        byte[] data = binaryReader.ReadBytes((int)num);
+                        int num2 = 0;
+                        int num3 = 0;
+                        result = PngAssist.ChangeTextureFromPngByte(data, ref num2, ref num3);
+                    }
+                }
+            }
+            return result;
         }
     }
 }

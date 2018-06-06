@@ -19,7 +19,6 @@ namespace BetterSceneLoader
 {
     public class BetterSceneLoader : MonoBehaviour
     {
-        static string iconPath = Environment.CurrentDirectory + "/Plugins/InterfaceSuite/load.png";
         static string scenePath = Environment.CurrentDirectory + "/UserData/studioneo/BetterSceneLoader/";
         static string orderPath = scenePath + "order.txt";
 
@@ -161,17 +160,14 @@ namespace BetterSceneLoader
             folder.transform.SetRect(0f, 0f, 0f, 1f, 260f, 0f, 340f);
             folder.onClick.AddListener(() => Process.Start(scenePath));
 
-            if(File.Exists(iconPath))
-            {
-                var loadingPanel = UIUtility.CreatePanel("LoadingIconPanel", drag.transform);
-                loadingPanel.transform.SetRect(0f, 0f, 0f, 1f, 340f, 0f, 340f + headerSize);
-                loadingPanel.color = new Color(0f, 0f, 0f, 0f);
-                var loadingIcon = UIUtility.CreatePanel("LoadingIcon", loadingPanel.transform);
-                loadingIcon.transform.SetRect(0.1f, 0.1f, 0.9f, 0.9f);
-                var texture = PngAssist.LoadTexture(iconPath);
-                loadingIcon.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-                LoadingIcon.Init(loadingIcon, -5f); 
-            }
+            var loadingPanel = UIUtility.CreatePanel("LoadingIconPanel", drag.transform);
+            loadingPanel.transform.SetRect(0f, 0f, 0f, 1f, 340f, 0f, 340f + headerSize);
+            loadingPanel.color = new Color(0f, 0f, 0f, 0f);
+            var loadingIcon = UIUtility.CreatePanel("LoadingIcon", loadingPanel.transform);
+            loadingIcon.transform.SetRect(0.1f, 0.1f, 0.9f, 0.9f);
+            var texture = Utils.LoadTexture(Properties.Resources.loadicon);
+            loadingIcon.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+            LoadingIcon.Init(loadingIcon, -5f);
 
             imagelist = UIUtility.CreateScrollView("Imagelist", mainPanel.transform);
             imagelist.transform.SetRect(0f, 0f, 1f, 1f, marginSize, marginSize, -marginSize, -headerSize - marginSize / 2f);
