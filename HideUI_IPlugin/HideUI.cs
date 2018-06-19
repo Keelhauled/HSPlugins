@@ -5,11 +5,13 @@ using System.Linq;
 using System.Collections;
 using UnityEngine;
 using IllusionPlugin;
+using System.Reflection;
 
 namespace HideUI
 {
     class HideUI : MonoBehaviour
     {
+        static string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/HideUI.txt";
         Dictionary<string, CacheObject> canvasCache = new Dictionary<string, CacheObject>();
         KeyCode hotkey = KeyCode.M;
 
@@ -43,7 +45,7 @@ namespace HideUI
             {
                 if(Input.GetKeyDown(hotkey))
                 {
-                    var names = File.ReadAllLines(Environment.CurrentDirectory + "/Plugins/InterfaceSuite/HideUI.txt");
+                    var names = File.ReadAllLines(path);
                     if(names.Length > 0)
                     {
                         var gameobjects = FindObjectsOfType<GameObject>();
