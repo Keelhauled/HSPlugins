@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglePOV_IPlugin", "TogglePOVIPlugin\TogglePOV_IPlugin.csproj", "{32FF30DC-5D51-4321-BA3C-9B63014CA9CD}"
 EndProject
@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterClothingMenu", "Bette
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harmony4KPatch", "Harmony4KPatch\Harmony4KPatch.csproj", "{0EE2DF3C-BA8E-49BF-9C7F-DFE2D03CB904}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardOrganizer", "CardCategorizer\CardOrganizer.csproj", "{FB2A2917-36B6-4DB4-BBCC-C18C1052B0D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,7 +56,6 @@ Global
 		{6146B29E-5667-4FE9-94A2-AA48169A3D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6146B29E-5667-4FE9-94A2-AA48169A3D5C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{70505D5A-81F9-485D-BFB3-346BDEB7B6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70505D5A-81F9-485D-BFB3-346BDEB7B6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70505D5A-81F9-485D-BFB3-346BDEB7B6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70505D5A-81F9-485D-BFB3-346BDEB7B6BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE77F310-DFE0-414F-AEB9-BF1868E97AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -89,8 +90,14 @@ Global
 		{0EE2DF3C-BA8E-49BF-9C7F-DFE2D03CB904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0EE2DF3C-BA8E-49BF-9C7F-DFE2D03CB904}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EE2DF3C-BA8E-49BF-9C7F-DFE2D03CB904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB2A2917-36B6-4DB4-BBCC-C18C1052B0D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2A2917-36B6-4DB4-BBCC-C18C1052B0D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2A2917-36B6-4DB4-BBCC-C18C1052B0D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC49BECC-77EA-472C-A9FE-EFA4316F5EAC}
 	EndGlobalSection
 EndGlobal
