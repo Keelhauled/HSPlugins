@@ -58,7 +58,8 @@ namespace ModSettingsMenu
 
         void OnDestroy()
         {
-            DestroyImmediate(UISystem.gameObject);
+            if(UISystem)
+                DestroyImmediate(UISystem.gameObject);
         }
 
         void ModMenuUI()

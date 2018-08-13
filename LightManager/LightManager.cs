@@ -59,14 +59,16 @@ namespace LightManager
 
         void OnDestroy()
         {
-            DestroyImmediate(mainPanel.gameObject);
+            if(mainPanel)
+                DestroyImmediate(mainPanel.gameObject);
 
             foreach(var item in Resources.FindObjectsOfTypeAll<TrackTransform>())
             {
                 DestroyImmediate(item);
             }
             
-            Studio.Studio.Instance.treeNodeCtrl.onSelect -= selectWorkDel;
+            if(Studio.Studio.Instance)
+                Studio.Studio.Instance.treeNodeCtrl.onSelect -= selectWorkDel;
         }
 
         void Update()

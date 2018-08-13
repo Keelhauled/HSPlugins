@@ -30,25 +30,25 @@ namespace LightManager
 
         void OnLoad(string path, XmlNode node)
         {
-            StartCoroutine(OnLoadDelay(node));
+            if(node != null)
+                StartCoroutine(OnLoadDelay(node)); 
         }
 
         IEnumerator OnLoadDelay(XmlNode node)
         {
+            if(node.InnerXml.IsNullOrWhiteSpace()) yield break;
             for(int i = 0; i < 3; i++) yield return null;
-            
+
             var mainElement = XElement.Parse(node.InnerXml);
             if(mainElement != null)
             {
                 foreach(var element in mainElement.Elements())
                 {
-                    ObjectCtrlInfo lightInfo;
-                    if(Studio.Studio.Instance.dicObjectCtrl.TryGetValue((int)element.Element(LIGHT_ID), out lightInfo))
+                    if(Studio.Studio.Instance.dicObjectCtrl.TryGetValue((int)element.Element(LIGHT_ID), out ObjectCtrlInfo lightInfo))
                     {
                         if(lightInfo is OCILight)
                         {
-                            ObjectCtrlInfo targetInfo;
-                            if(Studio.Studio.Instance.dicObjectCtrl.TryGetValue((int)element.Element(TARGET_ID), out targetInfo))
+                            if(Studio.Studio.Instance.dicObjectCtrl.TryGetValue((int)element.Element(TARGET_ID), out ObjectCtrlInfo targetInfo))
                             {
                                 var ocilight = lightInfo as OCILight;
                                 var light = (lightInfo as OCILight).light;
@@ -80,8 +80,7 @@ namespace LightManager
                     var tracker = light.gameObject.GetComponent<TrackTransform>();
                     if(tracker)
                     {
-                        ObjectCtrlInfo info;
-                        if(Studio.Studio.Instance.dicObjectCtrl.TryGetValue(tracker.targetKey, out info))
+                        if(Studio.Studio.Instance.dicObjectCtrl.TryGetValue(tracker.targetKey, out ObjectCtrlInfo info))
                         {
                             var element = new XElement(ELEMENT_NAME, new object[]
                             {

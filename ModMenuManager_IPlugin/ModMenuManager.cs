@@ -72,7 +72,8 @@ namespace ModMenuManager
 
         void OnDestroy()
         {
-            DestroyImmediate(UISystem.gameObject);
+            if(UISystem)
+                DestroyImmediate(UISystem.gameObject); 
         }
 
         IEnumerator MakeUI()
