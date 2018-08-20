@@ -5,6 +5,7 @@ using System.Reflection;
 using UnityEngine;
 using System.Xml.Linq;
 using dnlib.DotNet;
+using UnityEngine.SceneManagement;
 
 // if scene changes and gameobject doesn't persist, field once is wrong, add OncePerScene option (doesn't matter in neo)
 
@@ -48,6 +49,7 @@ namespace AutoModReload
                 if(targetFolder != null)
                 {
                     Console.WriteLine(new string('=', 40));
+                    Console.WriteLine($"Current scene is {SceneManager.GetActiveScene().name}");
                     foreach(var path in Directory.GetFiles(targetFolder)) InvokeBootstrapWrap(path);
                     Console.WriteLine(new string('=', 40)); 
                 }
