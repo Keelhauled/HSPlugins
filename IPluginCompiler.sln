@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglePOV_IPlugin", "TogglePOVIPlugin\TogglePOV_IPlugin.csproj", "{32FF30DC-5D51-4321-BA3C-9B63014CA9CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglePOV", "TogglePOVIPlugin\TogglePOV.csproj", "{32FF30DC-5D51-4321-BA3C-9B63014CA9CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HideUI_IPlugin", "HideUI_IPlugin\HideUI_IPlugin.csproj", "{9A4E30DD-48B4-438A-A6D4-4D7ADA297C09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModSettingsMenu_IPlugin", "ModSettingsMenu_IPlugin\ModSettingsMenu_IPlugin.csproj", "{43334E79-A3EB-45B1-BEB2-F9B8FD88CFB4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModSettingsMenu", "ModSettingsMenu_IPlugin\ModSettingsMenu.csproj", "{43334E79-A3EB-45B1-BEB2-F9B8FD88CFB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModMenuManager_IPlugin", "ModMenuManager_IPlugin\ModMenuManager_IPlugin.csproj", "{6146B29E-5667-4FE9-94A2-AA48169A3D5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModMenuManager", "ModMenuManager_IPlugin\ModMenuManager.csproj", "{6146B29E-5667-4FE9-94A2-AA48169A3D5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterSceneLoader_IPlugin", "BetterSceneLoader_IPlugin\BetterSceneLoader_IPlugin.csproj", "{70505D5A-81F9-485D-BFB3-346BDEB7B6BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterSceneLoader", "BetterSceneLoader_IPlugin\BetterSceneLoader.csproj", "{70505D5A-81F9-485D-BFB3-346BDEB7B6BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoModReload", "AutoModReload\AutoModReload.csproj", "{BE77F310-DFE0-414F-AEB9-BF1868E97AE6}"
 EndProject
