@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harmony4KPatch", "Harmony4K
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardOrganizer", "CardCategorizer\CardOrganizer.csproj", "{FB2A2917-36B6-4DB4-BBCC-C18C1052B0D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitleShortcuts", "TitleShortcuts\TitleShortcuts.csproj", "{A77F6F02-1DD5-450A-BE87-30FA910C2F8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{FB2A2917-36B6-4DB4-BBCC-C18C1052B0D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB2A2917-36B6-4DB4-BBCC-C18C1052B0D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB2A2917-36B6-4DB4-BBCC-C18C1052B0D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A77F6F02-1DD5-450A-BE87-30FA910C2F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A77F6F02-1DD5-450A-BE87-30FA910C2F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A77F6F02-1DD5-450A-BE87-30FA910C2F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A77F6F02-1DD5-450A-BE87-30FA910C2F8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
