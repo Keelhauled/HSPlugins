@@ -22,29 +22,10 @@ namespace NeckSettings
             "StudioNEO_64",
         };
 
-        //public static string[] SceneFilter = new string[]
-        //{
-        //    "Studio",
-        //    "HScene",
-        //    "CustomScene",
-        //};
-
         public void OnLevelWasLoaded(int level)
         {
-            //StartMod();
+            
         }
-
-        //public static void StartMod()
-        //{
-        //    //if(SceneFilter.Contains(SceneManager.GetActiveScene().name)) new GameObject(PLUGIN_NAME).AddComponent<HSTesting>();
-        //}
-
-        //public static void Bootstrap()
-        //{
-        //    var gameobject = GameObject.Find(PLUGIN_NAME);
-        //    if(gameobject != null) GameObject.DestroyImmediate(gameobject);
-        //    StartMod();
-        //}
 
         public void OnApplicationStart()
         {

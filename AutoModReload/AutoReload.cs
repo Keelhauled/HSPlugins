@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using dnlib.DotNet;
 using UnityEngine.SceneManagement;
 
-// if scene changes and gameobject doesn't persist, field once is wrong, add OncePerScene option (doesn't matter in neo)
+// if scene changes and gameobject doesn't persist, field once is wrong, add OncePerScene option
 
 namespace AutoModReload
 {
