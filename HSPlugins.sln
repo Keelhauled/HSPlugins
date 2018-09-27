@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglePOV", "TogglePOV\TogglePOV.csproj", "{32FF30DC-5D51-4321-BA3C-9B63014CA9CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HideUI_IPlugin", "HideUI_IPlugin\HideUI_IPlugin.csproj", "{9A4E30DD-48B4-438A-A6D4-4D7ADA297C09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HideUI", "HideUI\HideUI.csproj", "{9A4E30DD-48B4-438A-A6D4-4D7ADA297C09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModSettingsMenu", "ModSettingsMenu\ModSettingsMenu.csproj", "{43334E79-A3EB-45B1-BEB2-F9B8FD88CFB4}"
 EndProject
