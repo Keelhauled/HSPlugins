@@ -42,7 +42,7 @@ namespace ModSettingsMenu
 
         void Awake()
         {
-            UIUtility.Init();
+            UIUtility.Init(nameof(ModSettingsMenu));
             //var ab = AssetBundle.LoadFromFile(Environment.CurrentDirectory + "/Plugins/InterfaceSuite/font");
             //var f = ab.LoadAsset<Font>("assets/new folder/avenirltstd-medium.ttf");
             //if(f) UIUtility.defaultFont = f;

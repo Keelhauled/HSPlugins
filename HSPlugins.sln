@@ -35,7 +35,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardOrganizer", "CardCatego
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitleShortcuts", "TitleShortcuts\TitleShortcuts.csproj", "{A77F6F02-1DD5-450A-BE87-30FA910C2F8B}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UILib", "UIUtility\UILib.shproj", "{64405B83-836F-4B26-9317-D9891A8F6945}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		UIUtility\UIUtility.projitems*{43334e79-a3eb-45b1-beb2-f9b8fd88cfb4}*SharedItemsImports = 4
+		UIUtility\UIUtility.projitems*{6146b29e-5667-4fe9-94a2-aa48169a3d5c}*SharedItemsImports = 4
+		UIUtility\UIUtility.projitems*{64405b83-836f-4b26-9317-d9891a8f6945}*SharedItemsImports = 13
+		UIUtility\UIUtility.projitems*{f803db48-8542-470e-b467-c9e5bfe95139}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

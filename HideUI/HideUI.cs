@@ -13,7 +13,7 @@ namespace HideUI
     {
         static string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/HideUI.txt";
         Dictionary<string, CacheObject> canvasCache = new Dictionary<string, CacheObject>();
-        KeyCode hotkey = KeyCode.M;
+        KeyCode hotkey = KeyCode.Mouse3;
 
         void Awake()
         {

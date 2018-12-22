@@ -9,10 +9,10 @@ namespace ModMenuManager
     {
         public const string PLUGIN_NAME = "ModMenuManager";
         public const string PLUGIN_VERSION = "1.0";
-        public string Name => PLUGIN_NAME;
-        public string Version => PLUGIN_VERSION;
+        public string Name { get; } = PLUGIN_NAME;
+        public string Version { get; } = PLUGIN_VERSION;
 
-        public string[] Filter => new string[]
+        public string[] Filter { get; } = new string[]
         {
             "HoneySelect_32",
             "HoneySelect_64",

@@ -30,7 +30,7 @@ namespace ModMenuManager
 
         void Awake()
         {
-            UIUtility.Init();
+            UIUtility.Init(nameof(ModMenuManager));
             StartCoroutine(MakeUI());
         }
 

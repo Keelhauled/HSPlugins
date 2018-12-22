@@ -25,7 +25,7 @@ namespace LightManager
             var uiTransform = Studio.Studio.Instance.transform.Find("Canvas Main Menu/02_Manipulate/02_Light/Image Spot");
             spotlightUI = uiTransform.GetComponent<Image>();
 
-            UIUtility.Init();
+            UIUtility.Init(nameof(LightManager));
             ExtraLightUI(uiTransform);
 
             gameObject.AddComponent<SaveDataHandler>();
